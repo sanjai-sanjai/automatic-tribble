@@ -598,10 +598,11 @@ export default function FinanceSubjectPage() {
           {/* Chapters - Vertical List */}
           <div className="space-y-4">
             {passiveLearningChapters.map((item, index) => (
-              <Card 
+              <Card
                 key={item.chapter}
                 className="glass-card border border-secondary/30 p-4 hover:border-secondary/60 transition-colors cursor-pointer slide-up"
                 style={{ animationDelay: `${100 + index * 75}ms` }}
+                onClick={() => setSelectedChapter(item)}
               >
                 <div className="flex items-start gap-4">
                   <div className="h-14 w-14 rounded-xl bg-secondary/20 flex items-center justify-center shrink-0">
