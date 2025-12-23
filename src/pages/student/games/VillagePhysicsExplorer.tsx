@@ -409,14 +409,14 @@ export default function VillagePhysicsExplorer() {
               </p>
             </div>
             <div>
-              <h3 className="font-bold text-gray-800 mb-2">🕹 How to Play</h3>
-              <p className="text-sm text-gray-700">
+              <h3 className="font-bold text-foreground mb-2">🕹 How to Play</h3>
+              <p className="text-sm text-foreground/80">
                 Select a surface, push the cart with the same force each time, and observe how far it travels. Compare distances across surfaces!
               </p>
             </div>
             <div>
-              <h3 className="font-bold text-gray-800 mb-2">🧠 What You Learn</h3>
-              <p className="text-sm text-gray-700">
+              <h3 className="font-bold text-foreground mb-2">🧠 What You Learn</h3>
+              <p className="text-sm text-foreground/80">
                 Mud has high friction (stops quickly). Grass is moderate. Stone has low friction (rolls farthest). Surface matters more than force!
               </p>
             </div>
