@@ -303,34 +303,61 @@ export default function TasksPage() {
               className="mb-4"
             />
 
-            {/* STATS GRID */}
+            {/* STATUS FILTER CARDS */}
             <div className="grid grid-cols-3 gap-3">
-              {/* Completed */}
-              <div className="text-center">
-                <p className="text-xs text-muted-foreground mb-1">Completed</p>
-                <p className="font-heading text-xl font-bold text-secondary">
-                  {taskStats.completed}
-                </p>
-              </div>
+              {/* Completed Card */}
+              <button
+                onClick={() => setSelectedStatusFilter("completed")}
+                className={`aspect-square rounded-xl transition-all duration-300 flex flex-col items-center justify-center p-3 cursor-pointer group ${
+                  selectedStatusFilter === "completed"
+                    ? "bg-secondary/20 border-2 border-secondary shadow-lg shadow-secondary/20 scale-105"
+                    : "bg-card border-2 border-border hover:border-secondary/50 hover:shadow-md"
+                }`}
+              >
+                <div className="text-center space-y-1">
+                  <p className="font-heading text-2xl font-bold text-secondary">
+                    {taskStats.completed}
+                  </p>
+                  <p className="text-xs font-medium text-foreground">Completed</p>
+                  <div className={`h-1 rounded-full transition-all ${selectedStatusFilter === "completed" ? "w-8 bg-secondary" : "w-4 bg-border"}`}></div>
+                </div>
+              </button>
 
-              {/* In Progress */}
-              <div className="text-center">
-                <p className="text-xs text-muted-foreground mb-1">Active</p>
-                <p className="font-heading text-xl font-bold text-accent">
-                  {taskStats.inProgress}
-                </p>
-              </div>
+              {/* Active Card */}
+              <button
+                onClick={() => setSelectedStatusFilter("active")}
+                className={`aspect-square rounded-xl transition-all duration-300 flex flex-col items-center justify-center p-3 cursor-pointer group ${
+                  selectedStatusFilter === "active"
+                    ? "bg-accent/20 border-2 border-accent shadow-lg shadow-accent/20 scale-105"
+                    : "bg-card border-2 border-border hover:border-accent/50 hover:shadow-md"
+                }`}
+              >
+                <div className="text-center space-y-1">
+                  <p className="font-heading text-2xl font-bold text-accent">
+                    {taskStats.inProgress}
+                  </p>
+                  <p className="text-xs font-medium text-foreground">Active</p>
+                  <div className={`h-1 rounded-full transition-all ${selectedStatusFilter === "active" ? "w-8 bg-accent" : "w-4 bg-border"}`}></div>
+                </div>
+              </button>
 
-              {/* Available Tasks */}
-              <div className="text-center">
-                <p className="text-xs text-muted-foreground mb-1">Available</p>
-                <p className="font-heading text-xl font-bold text-primary">
-                  {taskStats.available}
-                </p>
-                <p className="text-xs text-muted-foreground/70 mt-0.5">
-                  Tasks you can start right now
-                </p>
-              </div>
+              {/* Available Card */}
+              <button
+                onClick={() => setSelectedStatusFilter("available")}
+                className={`aspect-square rounded-xl transition-all duration-300 flex flex-col items-center justify-center p-3 cursor-pointer group ${
+                  selectedStatusFilter === "available"
+                    ? "bg-primary/20 border-2 border-primary shadow-lg shadow-primary/20 scale-105"
+                    : "bg-card border-2 border-border hover:border-primary/50 hover:shadow-md"
+                }`}
+              >
+                <div className="text-center space-y-1">
+                  <p className="font-heading text-2xl font-bold text-primary">
+                    {taskStats.available}
+                  </p>
+                  <p className="text-xs font-medium text-foreground">Available</p>
+                  <div className={`h-1 rounded-full transition-all ${selectedStatusFilter === "available" ? "w-8 bg-primary" : "w-4 bg-border"}`}></div>
+                </div>
+              </button>
             </div>
 
             {/* MOTIVATIONAL MESSAGE */}
