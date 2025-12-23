@@ -282,25 +282,50 @@ const financeGames: GameCard[] = [
   },
 ];
 
-const activeLearningLevels = [
+interface ActiveLearningModule {
+  id: string;
+  name: string;
+  description: string;
+  icon: React.ElementType;
+  component: React.ComponentType;
+  xp: number;
+  coins: number;
+}
+
+const activeLearningModules: ActiveLearningModule[] = [
   {
-    level: 1,
-    name: "Earning & Spending",
-    description: "Understand income and expenses",
+    id: "money-flow",
+    name: "Money Flow Explorer",
+    description: "Understand where your money goes",
+    icon: Wallet,
+    component: MoneyFlowVisualizer,
     xp: 100,
     coins: 30
   },
   {
-    level: 2,
-    name: "Saving Strategies",
-    description: "Learn effective saving methods",
+    id: "need-vs-want",
+    name: "Need vs Want Sorter",
+    description: "Learn to distinguish needs from wants",
+    icon: Target,
+    component: GuidedSorter,
     xp: 150,
     coins: 40
   },
   {
-    level: 3,
-    name: "Banking Essentials",
-    description: "Explore how banks work",
+    id: "timeline",
+    name: "Saving vs Spending",
+    description: "See 30 days of compound decisions",
+    icon: Zap,
+    component: TimelineComparison,
+    xp: 150,
+    coins: 40
+  },
+  {
+    id: "interest-story",
+    name: "How Banks Work",
+    description: "Explore the power of interest",
+    icon: Wallet,
+    component: InterestStory,
     xp: 200,
     coins: 60
   }
